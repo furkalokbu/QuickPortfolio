@@ -44,3 +44,17 @@ class Image(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class  Comments(models.Model):
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    message = models.TextField(_("message"), blank=True)
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=70, blank=True, null=True, unique=True)
+    portfolio = models.ForeignKey(
+        Portfolio, null=True, on_delete=models.SET_NULL, related_name='comments')
+
+
+    def __str__(self):
+        return self.name

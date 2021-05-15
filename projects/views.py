@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import ImageForm
 import requests
 from django.conf import settings
-from .models import Portfolio
+from .models import Image, Portfolio
 
 
 # def image_upload_view(request):
@@ -25,15 +25,14 @@ def Home(request):
     portfolios = Portfolio.objects.all()
     context = {'portfolios': portfolios}
 
-    response = requests.get('http://104.236.5.177/api/portfolio/')
-    # response = requests.get('http://localhost:8000/api/portfolio/')
+    # response = requests.get(settings.SERVER_IP + 'api/portfolio/')
 
-    if response.status_code == 200:
-        context = {"portfolios": response.json(),}
-    else:
-        context = {
-            "portfolios": {},
-            "error": "Bad response!"}
+    # if response.status_code == 200:
+    #     context = {"portfolios": response.json(),}
+    # else:
+    #     context = {
+    #         "portfolios": {},
+    #         "error": "Bad response!"}
   
     return render(request, template_name, context)
 
@@ -42,6 +41,7 @@ def PortfolioDetail(request, pk):
     template_name = "detail.html"
     try:
         detail = Portfolio.objects.filter(pk=pk).first()
+        images = Image.objects.filter(portfolio=detail)
         return render (request, template_name, {'detail': detail})
     except Portfolio.DoesNotExist:
         return None
