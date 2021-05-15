@@ -1,0 +1,8 @@
+*.pyc
+*.iml
+*.xml
+env
+/media/
+*.pyc
+.vscode
+.vscode/settings.json
