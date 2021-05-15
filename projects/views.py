@@ -25,7 +25,7 @@ def Home(request):
     # portfolios = Portfolio.objects.all()
     # context = {'portfolios': portfolios}
 
-    response = requests.get("http://localhost:8000/api/portfolio/")
+    response = requests.get('http://localhost:8000/api/portfolio/')
 
     if response.status_code == 200:
         context = {"portfolios": response.json(),}

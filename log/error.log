@@ -769,3 +769,106 @@ Traceback (most recent call last):
   File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['portfolio/(?P<pk>[^/]+)/$']
+ERROR 2021-05-15 12:57:16,126 log 8829 140242409727744 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 28, in Home
+    response = requests.get(settings.BASE_URL + '/api/portfolio/')
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/models.py", line 316, in prepare
+    self.prepare_url(url, params)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/models.py", line 390, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '//api/portfolio/': No schema supplied. Perhaps you meant http:////api/portfolio/?
+ERROR 2021-05-15 13:04:55,741 log 9846 140027711305472 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 28, in Home
+    response = requests.get('/api/portfolio/')
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/models.py", line 316, in prepare
+    self.prepare_url(url, params)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/models.py", line 390, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '/api/portfolio/': No schema supplied. Perhaps you meant http:///api/portfolio/?
+ERROR 2021-05-15 13:05:12,228 log 9882 140333022443264 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 28, in Home
+    response = requests.get('api/portfolio/')
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/models.py", line 316, in prepare
+    self.prepare_url(url, params)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/models.py", line 390, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'api/portfolio/': No schema supplied. Perhaps you meant http://api/portfolio/?
+ERROR 2021-05-15 13:20:57,503 log 10883 140533173004032 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 28, in Home
+    response = requests.get('/api/portfolio/')
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 528, in request
+    prep = self.prepare_request(req)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 466, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/models.py", line 316, in prepare
+    self.prepare_url(url, params)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/models.py", line 390, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '/api/portfolio/': No schema supplied. Perhaps you meant http:///api/portfolio/?
+ERROR 2021-05-15 13:21:15,844 log 10946 140388432684800 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 28, in Home
+    response = requests.get('localhost:8000/api/portfolio/')
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 649, in send
+    adapter = self.get_adapter(url=request.url)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 742, in get_adapter
+    raise InvalidSchema("No connection adapters were found for {!r}".format(url))
+requests.exceptions.InvalidSchema: No connection adapters were found for 'localhost:8000/api/portfolio/'
