@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     {% if request.user.is_authenticated %}
-                    <li class="active"><a href="/">Portfolio</a></li>
+                    <li class="active"><a href="/">MyPortfolios</a></li>
                     <li class="active"><a href="/">Profile</a></li>
                     <li><a href="{% url 'logout' %}"><span class="icon flaticon-password"></span> Logout</a></li>
                     {% else %}
@@ -42,29 +42,38 @@
     <section id="blog-single-post">
         <div class="container">
              <div class="row">
-   
                   <div class="col-md-offset-1 col-md-10 col-sm-12">
-                       <div class="blog-single-post-thumb">
-                            <div class="blog-post-image">
-
-                              <div class="slider">
-                                   <div class="item">
-                                        {% if detail.image %}
-                                       <img src="{{ detail.image.url }}" alt="">
-                                        {% endif %}
-                                       <!-- <div class="slideText"></div> -->
+                       <div class="blog-single-post-thumb">    
+                         <div class="blog-post-image">
+                              
+                              <!-- <div class="col-md-offset-1 col-md-10 col-sm-12"> -->
+                                   <div class="col-md-8 col-sm-12">
+                                        <div class="slider">
+                                             {% for image in images %}
+                                             <div class="item">
+                                                  {% if detail.image %}
+                                                 <img src="{{ image.thumbnail.url }}" alt="">
+                                                  {% endif %}
+                                                 <!-- <div class="slideText"></div> -->
+                                             </div>
+                                             {% endfor %}          
+                                             <a class="prev" onclick="minusSlide()">&#10094;</a>
+                                             <a class="next" onclick="plusSlide()">&#10095;</a>
+                                         </div>
+                                         
+                                         <div class="slider-dots">
+                                             {% for image in images %}
+                                             <span class="slider-dots_item" onclick="currentSlide({{ forloop.counter }})"></span>
+                                             {% endfor %}
+                                         </div>
                                    </div>
-                                                             
-                                   <a class="prev" onclick="minusSlide()">&#10094;</a>
-                                   <a class="next" onclick="plusSlide()">&#10095;</a>
-                               </div>
-                               
-                               <div class="slider-dots">
-                                   <span class="slider-dots_item" onclick="currentSlide(1)"></span> 
-                                   <span class="slider-dots_item" onclick="currentSlide(2)"></span> 
-                                   <span class="slider-dots_item" onclick="currentSlide(3)"></span> 
-                               </div>
-
+                                   <div class="col-md-4 col-sm-12">
+                                        <p>Text for slide</p>
+                                   </div>
+                                  
+                                   <div class="clearfix"></div>
+                                   <hr>
+                              <!-- </div> -->
                             </div>
    
                             <div class="blog-post-title">
@@ -72,7 +81,7 @@
                             </div>
    
                             <div class="blog-post-format">
-                                 <span><i class="fa fa-date"></i> Jan 30, 2016</span>
+                                 <span><i class="fa fa-date"></i> {{detail.created_at}} </span>
                                  <span><a href="#"><i class="fa fa-comment-o"></i> 124 Comments</a></span>
                             </div>
    
@@ -81,30 +90,29 @@
                                  
                             </div>
       
-                            <div class="blog-comment">
-                                 <h3>2 Comments</h3>
-                                      <div class="media">
-                                           <div class="media-body">
-                                                <h3 class="media-heading">David Jones</h3>
-                                                <span>7 months ago</span>
-                                                <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque, curabitur.</p>
-                                           </div>
-                                      </div>
-                            </div>
-   
-                            <div class="blog-comment-form">
-                                 <h3>Leave a Comment</h3>
-                                      <form action="#" method="post">
-                                           <textarea class="form-control" placeholder="Message" rows="5" name"Your Comments" required></textarea>
-                                           <input type="text" class="form-control" placeholder="Name" name="name" required>
-                                           <input type="email" class="form-control" placeholder="Email" name="email" required>
-                                           <div class="col-md-3 col-sm-4">
-                                                <input type="submit" class="form-control" value="Post Your Comment">
-                                           </div>
-                                      </form>
-                            </div>
+                         <div class="blog-comment">
+                              <h3>2 Comments</h3>
+                                   <div class="media" id="feedback_request_form">
+                                        {% include 'includes/comments.html' %}
+                                   </div>
+                              </div>
+                         <div class="blog-comment-form">
+                              <h3>Leave a Comment</h3>
+                         <form  method="post" action="" onsubmit="">
+                              {% csrf_token %}
+                              {% for field in form.visible_fields %}
+                                  {{ field }}
+                              {% endfor %}
+                         <div class="col-md-3 col-sm-4">
+                              <input type="submit"  class="form-control" value="Post Your Comment">
+                              <!-- <button type="submit" class="form-control" id="feedback_form_submit_btn">Post Your Comment</button> -->
+                         </div>
+                    </form>
+           </div>
+
                        </div>
              </div>
+
         </div>
    </section>
 
@@ -117,21 +125,18 @@
                <div class="clearfix col-md-12 col-sm-12">
                    <hr>
               </div>
-
               <div class="col-md-6 col-sm-6">
                    <div class="footer-copyright">
                         <p>© 2021 Project for Lanars | All Rights Reserved</p>
                    </div>
               </div>
-
               <div class="col-md-6 col-sm-6">
                    <ul class="social-icon">
                         <li><a href="/" class="fa fa-facebook"></a></li>
                         <li><a href="/" class="fa fa-twitter"></a></li>
                         <li><a href="/" class="fa fa-linkedin"></a></li>
                    </ul>
-              </div>
-              
+              </div> 
          </div>
     </div>
 </footer>

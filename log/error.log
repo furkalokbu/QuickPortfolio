@@ -881,3 +881,245 @@ Traceback (most recent call last):
   File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 28, in Home
     response = requests.get(api)
 NameError: name 'api' is not defined
+ERROR 2021-05-15 18:28:08,626 log 29863 140051293140736 Internal Server Error: /portfolio/1/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 183, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/engine.py", line 180, in select_template
+    raise TemplateDoesNotExist(', '.join(not_found))
+django.template.exceptions.TemplateDoesNotExist: /includes/comments.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 42, in PortfolioDetail
+    return render (request, template_name, {'detail': detail, 'images': images, 'form': form})
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: /includes/comments.html
+ERROR 2021-05-15 18:28:31,546 log 29863 140051293140736 Internal Server Error: /portfolio/1/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 183, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/engine.py", line 180, in select_template
+    raise TemplateDoesNotExist(', '.join(not_found))
+django.template.exceptions.TemplateDoesNotExist: /includes/comments.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 42, in PortfolioDetail
+    return render (request, template_name, {'detail': detail, 'images': images, 'form': form})
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: /includes/comments.html
+ERROR 2021-05-15 18:29:12,773 log 29964 140413043283712 Internal Server Error: /portfolio/1/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 183, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/engine.py", line 180, in select_template
+    raise TemplateDoesNotExist(', '.join(not_found))
+django.template.exceptions.TemplateDoesNotExist: QuickPortfolio/includes/comments.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 42, in PortfolioDetail
+    return render (request, template_name, {'detail': detail, 'images': images, 'form': form})
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: QuickPortfolio/includes/comments.html
+ERROR 2021-05-15 19:39:30,512 log 2627 140477827098368 Internal Server Error: /portfolio/1/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 54, in PortfolioDetail
+    return render (request, template_name, {'detail': detail, 'images': images, 'form': form, 'comments': comments})
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/urls/resolvers.py", line 694, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio_detail' with no arguments not found. 1 pattern(s) tried: ['portfolio/(?P<pk>[^/]+)/$']
+ERROR 2021-05-15 19:41:11,367 log 2878 139975588337408 Internal Server Error: /portfolio/1/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 54, in PortfolioDetail
+    return render (request, template_name, {'detail': detail, 'images': images, 'form': form, 'comments': comments})
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 278, in do_extends
+    nodelist = parser.parse()
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 216, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/defaulttags.py", line 1389, in url
+    args.append(parser.compile_filter(value))
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 663, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '${1}' from '${1}'

@@ -27,7 +27,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     {% if request.user.is_authenticated %}
                     
-                    <li class="active"><a href="/">Portfolio</a></li>
+                    <li class="active"><a href="/">MyPortfolios</a></li>
                     <li class="active"><a href="/">Profile</a></li>
                     <li><a href="{% url 'logout' %}"><span class="icon flaticon-password"></span> Logout</a></li>
                     {% else %}
@@ -35,10 +35,8 @@
                     {% endif %}
                 </ul>
             </div>
-
     </div>
     </div>
-
     <!-- Portfolio Section -->
     <section id="portfolio">
         <div class="container">
@@ -60,15 +58,11 @@
                          </div>
                     </a>
                </div>
-
                 {% endfor %}
-
             </div>
         </div>
     </section> 
-    
 <!-- Footer Section -->
-
 <footer>
     <div class="container">
          <div class="row">
