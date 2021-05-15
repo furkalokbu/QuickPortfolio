@@ -25,14 +25,15 @@ def Home(request):
     portfolios = Portfolio.objects.all()
     context = {'portfolios': portfolios}
 
+    response = requests.get('http://http://104.236.5.177/api/portfolio/')
     # response = requests.get('http://localhost:8000/api/portfolio/')
 
-    # if response.status_code == 200:
-    #     context = {"portfolios": response.json(),}
-    # else:
-    #     context = {
-    #         "portfolios": {},
-    #         "error": "Bad response!"}
+    if response.status_code == 200:
+        context = {"portfolios": response.json(),}
+    else:
+        context = {
+            "portfolios": {},
+            "error": "Bad response!"}
   
     return render(request, template_name, context)
 

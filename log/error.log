@@ -872,3 +872,12 @@ Traceback (most recent call last):
   File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/requests/sessions.py", line 742, in get_adapter
     raise InvalidSchema("No connection adapters were found for {!r}".format(url))
 requests.exceptions.InvalidSchema: No connection adapters were found for 'localhost:8000/api/portfolio/'
+ERROR 2021-05-15 14:23:13,055 log 13859 140556390422272 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 28, in Home
+    response = requests.get(api)
+NameError: name 'api' is not defined
