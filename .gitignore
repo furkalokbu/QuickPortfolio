@@ -4,6 +4,7 @@
 env
 /media/
 /static/
+/log/
 *.pyc
 .vscode
 .vscode/settings.json
