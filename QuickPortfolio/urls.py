@@ -23,6 +23,11 @@ urlpatterns = [
     # path("portfolio/<pk>/", PortfolioDetail, name="portfolio_detail"),
     # path("api/", include("users.api.urls")),
     path("api/", include("projects.api.urls", namespace="api")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, 
+                          document_root=settings.STATIC_ROOT)
    
