@@ -64,6 +64,7 @@ LOCALE_PATHS = (
     path('locale'),
 )
 
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
