@@ -20,7 +20,7 @@ urlpatterns = [
     ),
     path("accounts/", include("django_registration.backends.one_step.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
-    # path("portfolio/<pk>/", PortfolioDetail, name="portfolio_detail"),
+    path("portfolio/<pk>/", views.PortfolioDetail, name="portfolio_detail"),
     # path("api/", include("users.api.urls")),
     path("api/", include("projects.api.urls", namespace="api")),
 ] 

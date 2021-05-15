@@ -3,6 +3,7 @@
 *.xml
 env
 /media/
+/static/
 *.pyc
 .vscode
 .vscode/settings.json
