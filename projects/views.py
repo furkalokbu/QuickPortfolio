@@ -8,17 +8,17 @@ from django.http import JsonResponse
 
 def Home(request):
     template_name = "index.html"
-    portfolios = Portfolio.objects.all()
-    context = {'portfolios': portfolios}
+    # portfolios = Portfolio.objects.all()
+    # context = {'portfolios': portfolios}
 
-    # response = requests.get(settings.SERVER_IP + 'api/portfolio/')
+    response = requests.get(settings.SERVER_IP + 'api/portfolio/')
 
-    # if response.status_code == 200:
-    #     context = {"portfolios": response.json(),}
-    # else:
-    #     context = {
-    #         "portfolios": {},
-    #         "error": "Bad response!"}
+    if response.status_code == 200:
+        context = {"portfolios": response.json(),}
+    else:
+        context = {
+            "portfolios": {},
+            "error": "Bad response!"}
   
     return render(request, template_name, context)
 
@@ -30,10 +30,16 @@ def PortfolioDetail(request, pk):
     
     try:
         detail = Portfolio.objects.filter(pk=pk).first()
-        images = Image.objects.filter(portfolio=detail)
-        comments = Comments.objects.filter(portfolio=detail)    
     except Portfolio.DoesNotExist:
+        return None
+    try:
+        images = Image.objects.filter(portfolio=detail)
+    except Image.DoesNotExist:
         return None 
+    try:
+        comments = Comments.objects.filter(portfolio=detail)    
+    except Comments.DoesNotExist:
+        return None
 
     form = FeedbackRequestForm()
     success = False
