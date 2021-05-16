@@ -23,7 +23,7 @@ function showSlides(n) {
    var i;
    var slides = document.getElementsByClassName("item");
    var dots = document.getElementsByClassName("slider-dots_item");
-    const text = document.getElementsByClassName("text_slider");
+     let text = document.getElementsByClassName("text_slider");
     console.log(text);
 
    if (n > slides.length) {
