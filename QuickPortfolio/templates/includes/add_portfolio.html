@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+    <!-- <link rel="stylesheet" href="{% static 'bundle.css' %}"> -->
+{% endblock %}
+
+{% block content %} 
+    <noscript>
+        <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+
+    <!-- Navigation section  -->
+
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+            <a href="/" title="Sailing - Water Sports HTML Template"><img src="{% static 'images/logo_icon.svg' %}" alt=""></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                
+                <li class="active"><a href="{% url 'my_portfolio' %}">MyPortfolios</a></li>
+                <li class="active"><a href="{% url 'add_portfolio' %}">AddPortfolio</a></li>
+                <li><a href="{% url 'logout' %}"><span class="icon flaticon-password"></span> Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}"><span class="icon flaticon-password"></span> Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+</div>
+</div>
+    <div class="container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-default" type="submit">Create portfolio</button>
+    </form>
+    </div>
+    <br>
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+         <div class="row">
+
+               <div class="clearfix col-md-12 col-sm-12">
+                   <hr>
+              </div>
+
+              <div class="col-md-6 col-sm-6">
+                   <div class="footer-copyright">
+                        <p>© 2021 Project for Lanars | All Rights Reserved</p>
+                   </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6">
+                   <ul class="social-icon">
+                        <li><a href="/" class="fa fa-facebook"></a></li>
+                        <li><a href="/" class="fa fa-twitter"></a></li>
+                        <li><a href="/" class="fa fa-linkedin"></a></li>
+                   </ul>
+              </div>
+              
+         </div>
+    </div>
+</footer>
+
+    <div id="app"></div>
+
+{% endblock %}
+
+{% block js %}
+    <!-- <script src="{% static 'bundle.js' %}"></script> -->
+{% endblock %}

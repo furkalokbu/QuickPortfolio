@@ -11,9 +11,9 @@ class Portfolio(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     show = models.BooleanField(_("show"), default=True)   
     title = models.CharField(max_length=200)
-    description = models.TextField(_("description"), blank=True)
+    description = models.TextField(_("description"), default="")
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='portfolio/%Y/%m/%d/', blank=True)
+    image = models.ImageField(upload_to='portfolio/%Y/%m/%d/', default="")
   
     large = ImageSpecField([ResizeToFill(930, 310)], source="image")
     thumbnail = ImageSpecField([ResizeToFill(360, 321)], source="image")
@@ -36,7 +36,7 @@ class Image(models.Model):
     portfolio = models.ForeignKey(
         Portfolio, null=True, on_delete=models.SET_NULL, related_name='portfolio')
         
-    image = models.ImageField(upload_to='portfolio/%Y/%m/%d/', blank=True)
+    image = models.ImageField(upload_to='portfolio/%Y/%m/%d/', default="")
 
     large = ImageSpecField([ResizeToFill(930, 310)], source="image")
     thumbnail = ImageSpecField([ResizeToFill(360, 320)], source="image")

@@ -28,8 +28,8 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     {% if request.user.is_authenticated %}
-                    <li class="active"><a href="/">MyPortfolios</a></li>
-                    <li class="active"><a href="/">Profile</a></li>
+                    <li class="active"><a href="{% url 'my_portfolio' %}">MyPortfolios</a></li>
+                    <li class="active"><a href="{% url 'add_portfolio' %}">AddPortfolio</a></li>
                     <li><a href="{% url 'logout' %}"><span class="icon flaticon-password"></span> Logout</a></li>
                     {% else %}
                     <li><a href="{% url 'login' %}"><span class="icon flaticon-password"></span> Login</a></li>
@@ -78,16 +78,14 @@
                             </div>
                             <div class="blog-post-format">
                                  <span><i class="fa fa-date"></i> {{detail.created_at}} </span>
-                                 <span><a href="#"><i class="fa fa-comment-o"></i> 124 Comments</a></span>
+                                 <span><a href="#"><i class="fa fa-comment-o"></i> {{count}} Comments</a></span>
                             </div>
                             <div class="blog-post-des">
                                  <p>{{ detail.description }}</p> 
                             </div>
                          <div class="blog-comment">
-                              <h3>2 Comments</h3>
-                                   <div class="media" id="feedback_request_form">
-                                        {% include 'includes/comments.html' %}
-                                   </div>
+                              <h3>{{count}} Comments</h3>
+
                               </div>
                          <div class="blog-comment-form">
                               <h3>Leave a Comment</h3>

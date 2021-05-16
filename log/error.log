@@ -1179,3 +1179,181 @@ Traceback (most recent call last):
   File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 528, in invalid_block_tag
     get_text_list(["'%s'" % p for p in parse_until], 'or'),
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 136: 'endblock', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 2021-05-16 12:02:05,997 log 31624 139971860707072 Internal Server Error: /portfolio/3/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 183, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/engine.py", line 180, in select_template
+    raise TemplateDoesNotExist(', '.join(not_found))
+django.template.exceptions.TemplateDoesNotExist: includes/comments.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 61, in PortfolioDetail
+    return render (request, template_name, {'detail': detail, 'images': images, 'form': form, 'comments': comments, 'count': count})
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: includes/comments.html
+ERROR 2021-05-16 12:14:02,493 log 32405 140555807336192 Internal Server Error: /3/remove/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: remove_portfolio() got an unexpected keyword argument 'pk'
+ERROR 2021-05-16 12:14:48,872 log 32471 140463514502912 Internal Server Error: /3/remove/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: remove_portfolio() got an unexpected keyword argument 'pk'
+ERROR 2021-05-16 12:16:51,216 log 32692 139798366910208 Internal Server Error: /3/remove/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 82, in remove_portfolio
+    portfolio.remove(portfolio.pk)
+AttributeError: 'Portfolio' object has no attribute 'remove'
+ERROR 2021-05-16 13:33:56,924 log 5223 139703222114048 Internal Server Error: /myportfolio/add/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 311, in check_response
+    "instead." % name
+ValueError: The view projects.views.add_portfolio didn't return an HttpResponse object. It returned None instead.
+ERROR 2021-05-16 13:53:48,064 log 6834 140202295162624 Internal Server Error: /myportfolio/add/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: ОШИБКА:  нулевое значение в столбце "author_id" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (5, 2021-05-16 13:53:47.966711+00, 2021-05-16 13:53:47.966746+00, t, JS_Middle, xasxcacavaccacasc, , null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 91, in add_portfolio
+    form.save()
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/forms/models.py", line 468, in save
+    self.instance.save()
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/base.py", line 727, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/base.py", line 765, in save_base
+    force_update, using, update_fields,
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw,
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: ОШИБКА:  нулевое значение в столбце "author_id" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (5, 2021-05-16 13:53:47.966711+00, 2021-05-16 13:53:47.966746+00, t, JS_Middle, xasxcacavaccacasc, , null).
+
+ERROR 2021-05-16 13:54:00,264 log 6834 140202295162624 Internal Server Error: /myportfolio/add/
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.NotNullViolation: ОШИБКА:  нулевое значение в столбце "author_id" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (6, 2021-05-16 13:54:00.160768+00, 2021-05-16 13:54:00.160803+00, t, JS_Middle, xasxcacavaccacasc, portfolio/2021/05/16/portfolio-img2_3WVGvQI.jpg, null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 91, in add_portfolio
+    form.save()
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/forms/models.py", line 468, in save
+    self.instance.save()
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/base.py", line 727, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/base.py", line 765, in save_base
+    force_update, using, update_fields,
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw,
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: ОШИБКА:  нулевое значение в столбце "author_id" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (6, 2021-05-16 13:54:00.160768+00, 2021-05-16 13:54:00.160803+00, t, JS_Middle, xasxcacavaccacasc, portfolio/2021/05/16/portfolio-img2_3WVGvQI.jpg, null).
+
