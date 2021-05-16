@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 import requests
 from django.conf import settings
+from django.contrib.postgres.search import SearchVector
 from .models import Image, Portfolio, Comments
-from .forms import FeedbackRequestForm, PortfolioForm
+from .forms import FeedbackRequestForm, PortfolioForm, SearchForm
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 
@@ -97,3 +98,22 @@ def add_portfolio(request):
     context = {'form': form}
 
     return render(request, template_name, context)
+
+
+def portfolio_search(request):
+    template_name = "includes/search.html"
+    form = SearchForm()
+    query = None
+    results = []
+
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+    
+    if form.is_valid():
+        query = form.cleaned_data['query']
+        results = Portfolio.objects.annotate(
+            search=SearchVector('author','title','description'), 
+        ).filter(search=query)
+
+
+    return render(request,template_name,{'form':form, 'query':query, 'results':results})

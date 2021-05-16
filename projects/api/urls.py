@@ -5,4 +5,5 @@ app_name = "portfolio"
 
 urlpatterns = [
     path("portfolio/", views.PortfolioListView.as_view(), name="portfolio_list"),
+
 ]

@@ -18,6 +18,7 @@ urlpatterns = [
         ),
         name="django_registration_register",
     ),
+    path('search/', views.portfolio_search, name='portfolio_search'),
     path("accounts/", include("django_registration.backends.one_step.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("portfolio/<pk>/", views.PortfolioDetail, name="portfolio_detail"),

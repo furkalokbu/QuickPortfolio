@@ -30,8 +30,10 @@
                     {% if request.user.is_authenticated %}
                     <li class="active"><a href="{% url 'my_portfolio' %}">MyPortfolios</a></li>
                     <li class="active"><a href="{% url 'add_portfolio' %}">AddPortfolio</a></li>
+                    <li class="active"><a href="{% url 'portfolio_search' %}">SearchPortfolio</a></li>
                     <li><a href="{% url 'logout' %}"><span class="icon flaticon-password"></span> Logout</a></li>
                     {% else %}
+                    <li class="active"><a href="{% url 'portfolio_search' %}">SearchPortfolio</a></li>
                     <li><a href="{% url 'login' %}"><span class="icon flaticon-password"></span> Login</a></li>
                     {% endif %}
                 </ul>
@@ -43,16 +45,17 @@
              <div class="row">
                   <div class="col-md-offset-1 col-md-10 col-sm-12">
                        <div class="blog-single-post-thumb">    
+                         {% if images %}
                          <div class="blog-post-image">
-                                   <div class="col-md-8 col-sm-12">
+                              <div class="col-md-8 col-sm-12">
                                         <div class="slider">
+                                             {% if detail.image %}
                                              {% for image in images %}
                                              <div class="item">
-                                                  {% if detail.image %}
                                                  <img src="{{ image.thumbnail.url }}" alt="">
-                                                  {% endif %}
                                              </div>
-                                             {% endfor %}          
+                                             {% endfor %} 
+                                             {% endif %}         
                                              <a class="prev" onclick="minusSlide()">&#10094;</a>
                                              <a class="next" onclick="plusSlide()">&#10095;</a>
                                          </div>
@@ -73,6 +76,7 @@
                                    <div class="clearfix"></div>
                                    <hr>
                             </div>
+                            {% endif %}
                             <div class="blog-post-title">
                                  <h2>{{ detail.title|truncatechars:100 }}</a></h2>
                             </div>

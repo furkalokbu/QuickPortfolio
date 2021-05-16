@@ -29,8 +29,10 @@
                 
                 <li class="active"><a href="{% url 'my_portfolio' %}">MyPortfolios</a></li>
                 <li class="active"><a href="{% url 'add_portfolio' %}">AddPortfolio</a></li>
+                <li class="active"><a href="{% url 'portfolio_search' %}">SearchPortfolio</a></li>
                 <li><a href="{% url 'logout' %}"><span class="icon flaticon-password"></span> Logout</a></li>
                 {% else %}
+                <li class="active"><a href="{% url 'portfolio_search' %}">SearchPortfolio</a></li>
                 <li><a href="{% url 'login' %}"><span class="icon flaticon-password"></span> Login</a></li>
                 {% endif %}
             </ul>

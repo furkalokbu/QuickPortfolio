@@ -1,6 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 import os
 from django.conf import settings
+from django.urls import reverse
 from django.db import models
 from imagekit.models.fields import ImageSpecField
 from imagekit.processors.resize import ResizeToFill
@@ -25,7 +26,8 @@ class Portfolio(models.Model):
     def __str__(self):
         return self.author.username
 
-
+    def get_pk(self):
+        return self.pk
 
 class Image(models.Model):
 

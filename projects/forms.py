@@ -57,3 +57,6 @@ class PortfolioForm(forms.ModelForm):
                     if self.cleaned_data[f]:
                         self.fields[f].widget.attrs.update({'class': self.fields[f].widget.attrs.get('class', '') + ' is-valid'})
         return ret
+
+class SearchForm(forms.Form):
+    query = forms.CharField()
