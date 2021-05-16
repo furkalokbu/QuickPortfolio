@@ -1,6 +1,7 @@
 *.pyc
 *.iml
 *.xml
+*.log
 env
 /media/
 /static/

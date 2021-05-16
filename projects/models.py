@@ -49,9 +49,9 @@ class Image(models.Model):
 class  Comments(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
-    message = models.TextField(_("message"), blank=True)
+    message = models.TextField(_("message"), default="")
     name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=70, blank=True, null=True, unique=True)
+    email = models.EmailField(max_length=70, default="")
     portfolio = models.ForeignKey(
         Portfolio, null=True, on_delete=models.SET_NULL, related_name='comments')
 

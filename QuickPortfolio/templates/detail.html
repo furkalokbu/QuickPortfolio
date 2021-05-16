@@ -35,18 +35,14 @@
                     {% endif %}
                 </ul>
             </div>
-
     </div>
 </div>
-
     <section id="blog-single-post">
         <div class="container">
              <div class="row">
                   <div class="col-md-offset-1 col-md-10 col-sm-12">
                        <div class="blog-single-post-thumb">    
                          <div class="blog-post-image">
-                              
-                              <!-- <div class="col-md-offset-1 col-md-10 col-sm-12"> -->
                                    <div class="col-md-8 col-sm-12">
                                         <div class="slider">
                                              {% for image in images %}
@@ -54,7 +50,6 @@
                                                   {% if detail.image %}
                                                  <img src="{{ image.thumbnail.url }}" alt="">
                                                   {% endif %}
-                                                 <!-- <div class="slideText"></div> -->
                                              </div>
                                              {% endfor %}          
                                              <a class="prev" onclick="minusSlide()">&#10094;</a>
@@ -68,28 +63,25 @@
                                          </div>
                                    </div>
                                    <div class="col-md-4 col-sm-12">
-                                        <p>Text for slide</p>
+                                        {% for image in images %}
+                                        <div class="text_slider">
+                                             <p>{{image.title}}</p>
+                                        </div>
+                                        {% endfor %}
                                    </div>
-                                  
                                    <div class="clearfix"></div>
                                    <hr>
-                              <!-- </div> -->
                             </div>
-   
                             <div class="blog-post-title">
                                  <h2>{{ detail.title|truncatechars:100 }}</a></h2>
                             </div>
-   
                             <div class="blog-post-format">
                                  <span><i class="fa fa-date"></i> {{detail.created_at}} </span>
                                  <span><a href="#"><i class="fa fa-comment-o"></i> 124 Comments</a></span>
                             </div>
-   
                             <div class="blog-post-des">
-                                 <p>{{ detail.description }}</p>
-                                 
+                                 <p>{{ detail.description }}</p> 
                             </div>
-      
                          <div class="blog-comment">
                               <h3>2 Comments</h3>
                                    <div class="media" id="feedback_request_form">
@@ -98,21 +90,21 @@
                               </div>
                          <div class="blog-comment-form">
                               <h3>Leave a Comment</h3>
-                         <form  method="post" action="" onsubmit="">
-                              {% csrf_token %}
-                              {% for field in form.visible_fields %}
-                                  {{ field }}
+                              {% for error in form.errors %}
+                              <span style="color: red;">Error {{ error }}! Try again!</span>
                               {% endfor %}
-                         <div class="col-md-3 col-sm-4">
-                              <input type="submit"  class="form-control" value="Post Your Comment">
-                              <!-- <button type="submit" class="form-control" id="feedback_form_submit_btn">Post Your Comment</button> -->
+                              <form  method="post" action="" onsubmit="">
+                                   {% csrf_token %}
+                                   {% for field in form.visible_fields %}
+                                  {{ field }}
+                                   {% endfor %}
+                                   <div class="col-md-3 col-sm-4">
+                                   <input type="submit"  class="form-control" value="Post Your Comment">
+                                   </div>
+                              </form>
                          </div>
-                    </form>
-           </div>
-
-                       </div>
+                    </div>
              </div>
-
         </div>
    </section>
 
@@ -121,7 +113,6 @@
 <footer>
     <div class="container">
          <div class="row">
-
                <div class="clearfix col-md-12 col-sm-12">
                    <hr>
               </div>
