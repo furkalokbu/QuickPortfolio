@@ -23,14 +23,14 @@ function showSlides(n) {
    var i;
    var slides = document.getElementsByClassName("item");
    var dots = document.getElementsByClassName("slider-dots_item");
-     let text = document.getElementsByClassName("text_slider");
-    console.log(text);
+   var text = document.getElementsByClassName("text_slider");
+
 
    if (n > slides.length) {
-     slideIndex = 1
+     slideIndex = 1;
    }
    if (n < 1) {
-       slideIndex = slides.length
+       slideIndex = slides.length;
    }
    for (i = 0; i < slides.length; i++) {
        slides[i].style.display = "none";
