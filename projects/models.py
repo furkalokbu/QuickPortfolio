@@ -33,14 +33,14 @@ class Image(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     enabled = models.BooleanField(_("enabled"), default=True)
-    title = models.CharField(_("name"), max_length=100)
+    title = models.CharField(_("name"), max_length=200)
 
     portfolio = models.ForeignKey(
         Portfolio, null=True, on_delete=models.SET_NULL, related_name='portfolio')
         
     image = models.ImageField(upload_to='portfolio/%Y/%m/%d/', default="")
 
-    large = ImageSpecField([ResizeToFill(930, 310)], source="image")
+    large = ImageSpecField([ResizeToFill(540, 300)], source="image")
     thumbnail = ImageSpecField([ResizeToFill(360, 320)], source="image")
 
 
