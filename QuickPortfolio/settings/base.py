@@ -18,6 +18,7 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = ['*']
+
 SERVER_IP = 'http://104.236.5.177/'
 
 WSGI_APPLICATION = "QuickPortfolio.wsgi.application"

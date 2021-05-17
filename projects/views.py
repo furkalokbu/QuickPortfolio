@@ -13,14 +13,17 @@ def Home(request):
     context = {'portfolios': portfolios}
 
     # response = requests.get(settings.SERVER_IP + 'api/portfolio/')
+    
 
     # if response.status_code == 200:
     #     context = {"portfolios": response.json(),}
+       
     # else:
     #     context = {
     #         "portfolios": {},
     #         "error": "Bad response!"}
-  
+
+    
     return render(request, template_name, context)
 
 

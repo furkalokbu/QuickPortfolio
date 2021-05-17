@@ -20,5 +20,5 @@ class PortfolioAdmin(admin.ModelAdmin):
     # list_editable = ("enabled", "position")
     inlines = [ImagesInline, CommentsInline]
 
-admin.site.register(Comments)
-admin.site.register(Image)
+# admin.site.register(Comments)
+# admin.site.register(Image)
