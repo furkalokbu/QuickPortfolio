@@ -92,8 +92,7 @@ def add_portfolio(request):
             portfolio=form.save(commit=False)
             portfolio.author = request.user
             portfolio.save()
-
-            image = Image(portfolio=portfolio, title="main_image", image=request.FILES['image'])
+            image = Image(portfolio=portfolio, title=portfolio.description[:200], image=request.FILES['image'])
             image.save()
             
 

@@ -69,7 +69,7 @@
                                    <div class="col-md-4 col-sm-12">
                                         {% for image in images %}
                                         <div class="text_slider">
-                                             <p>{{image.title}}</p>
+                                             <p>{{image.title|truncatechars:200}}</p>
                                         </div>
                                         {% endfor %}
                                    </div>
