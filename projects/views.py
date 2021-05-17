@@ -139,3 +139,4 @@ def upload_image(request):
             form.save()
 
     return render(request, template_name, context)
+

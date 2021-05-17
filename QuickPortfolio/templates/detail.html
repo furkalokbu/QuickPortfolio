@@ -77,11 +77,15 @@
                                    <hr>
                             </div>
                             {% endif %}
-                            <form action="{% url 'upload_image' %}">
+                            <form id="add_form" action="{% url 'upload_image' %}">
                               {% csrf_token %}
-                              <button type="submit" class="btn btn-default">Add image</button>
+                            <!-- <button type="submit" class="btn btn-default">Add image</button> -->
                             </form>
-                            
+
+                            {% if request.user == detail.author %}
+                              <button onclick="formSubmit('add_form');" class="btn btn-default">Add image</button>
+                              <!-- <button onclick="formSubmit('remove_form');" class="btn btn-default">Remove image</button> -->
+                            {% endif %}
                             <div class="blog-post-title">
                                  <h2>{{ detail.title|truncatechars:100 }}</a></h2>
                             </div>
@@ -151,7 +155,10 @@
     <div id="app"></div>
 
 {% endblock %}
-
 {% block js %}
 <script src="{% static 'js/slider.js' %}"></script>
+<script>
+function formSubmit(id)
+     { document.getElementById(id).submit(); }
+</script  >
 {% endblock %}
