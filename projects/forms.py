@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-from .models import Comments, Portfolio
+from .models import Comments, Portfolio, Image
 
 
 class FeedbackRequestForm(forms.ModelForm):
@@ -60,3 +60,14 @@ class PortfolioForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
     query = forms.CharField()
+
+class ImageLoadForm(forms.ModelForm):
+    
+    class Meta:
+        model = Image
+        fields = ('title', 'portfolio', 'image')
+    
+    def __init__(self,user,*args,**kwargs):
+        super (ImageLoadForm,self ).__init__(*args,**kwargs) # populates the post
+        self.fields['portfolio'] = forms.ModelChoiceField(queryset=Portfolio.objects.filter(author=user))
+

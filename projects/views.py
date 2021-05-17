@@ -3,7 +3,7 @@ import requests
 from django.conf import settings
 from django.contrib.postgres.search import SearchVector
 from .models import Image, Portfolio, Comments
-from .forms import FeedbackRequestForm, PortfolioForm, SearchForm
+from .forms import FeedbackRequestForm, PortfolioForm, SearchForm, ImageLoadForm
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 
@@ -93,6 +93,10 @@ def add_portfolio(request):
             portfolio.author = request.user
             portfolio.save()
 
+            image = Image(portfolio=portfolio, title="main_image", image=request.FILES['image'])
+            image.save()
+            
+
             return redirect('my_portfolio')
 
     context = {'form': form}
@@ -112,8 +116,26 @@ def portfolio_search(request):
     if form.is_valid():
         query = form.cleaned_data['query']
         results = Portfolio.objects.annotate(
-            search=SearchVector('author','title','description'), 
+            search=SearchVector('title','description'), 
         ).filter(search=query)
 
 
     return render(request,template_name,{'form':form, 'query':query, 'results':results})
+
+def upload_image(request):
+    template_name = "includes/upload_image.html"
+    
+    portfolio = Portfolio.objects.filter(author=request.user)
+
+    form = ImageLoadForm(request.user)
+ 
+    context = {'form': form}
+
+    if request.method == 'POST':
+        user = request.user
+        form = ImageLoadForm(request.user, request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+
+    return render(request, template_name, context)

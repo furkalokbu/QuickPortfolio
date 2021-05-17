@@ -24,6 +24,7 @@ urlpatterns = [
     path("portfolio/<pk>/", views.PortfolioDetail, name="portfolio_detail"),
     path("myportfolio/", views.MyPortfolio, name="my_portfolio"),
     path("myportfolio/add/", views.add_portfolio, name="add_portfolio"),
+    path("myportfolio/upload/", views.upload_image, name="upload_image"),
     path("<item_id>/remove/", views.remove_portfolio, name='remove-portfolio'),
     # path("api/", include("users.api.urls")),
     path("api/", include("projects.api.urls", namespace="api")),

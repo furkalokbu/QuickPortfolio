@@ -21,3 +21,4 @@ class PortfolioAdmin(admin.ModelAdmin):
     inlines = [ImagesInline, CommentsInline]
 
 admin.site.register(Comments)
+admin.site.register(Image)

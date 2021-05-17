@@ -17,14 +17,14 @@ class Portfolio(models.Model):
     image = models.ImageField(upload_to='portfolio/%Y/%m/%d/', default="")
   
     large = ImageSpecField([ResizeToFill(930, 310)], source="image")
-    thumbnail = ImageSpecField([ResizeToFill(360, 321)], source="image")
+    thumbnail = ImageSpecField([ResizeToFill(360, 300)], source="image")
 
     class Meta:
         ordering = ("created_at",)
         verbose_name = _("Portfolio")
 
     def __str__(self):
-        return self.author.username
+        return self.title
 
     def get_pk(self):
         return self.pk
