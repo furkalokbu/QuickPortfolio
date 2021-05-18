@@ -12,7 +12,7 @@ from .permissions import IsAuthorOrReadOnly
 class PortfolioListView(viewsets.ModelViewSet):
     queryset = Portfolio.objects.all()
     serializer_class = PortfolioSerializer
-    permission_classes = [IsAuthenticated, IsAuthorOrReadOnly]
+    permission_classes = [IsAuthorOrReadOnly]
   
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
