@@ -10,3 +10,4 @@ env
 .vscode
 .vscode/settings.json
 log/error.log
+log/error.log

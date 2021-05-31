@@ -9,20 +9,20 @@ from django.http import JsonResponse
 
 def Home(request):
     template_name = "index.html"
-    # portfolios = Portfolio.objects.all()
-    # context = {'portfolios': portfolios}
+    portfolios = Portfolio.objects.all()
+    context = {'portfolios': portfolios}
 
     # response = requests.get('http://127.0.0.1:8000/api/portfolio/')
-    response = requests.get(settings.SERVER_IP + 'api/portfolio/')
+    # response = requests.get(settings.SERVER_IP + 'api/portfolio/')
     
 
-    if response.status_code != 200:
-        print("Status code: ", response.status_code)
-        context = {
-            "portfolios": {},
-            "error": "Bad response!"}
-    else:
-        context = {"portfolios": response.json(),}
+    # if response.status_code != 200:
+    #     print("Status code: ", response.status_code)
+    #     context = {
+    #         "portfolios": {},
+    #         "error": "Bad response!"}
+    # else:
+    #     context = {"portfolios": response.json(),}
     
     return render(request, template_name, context)
 
