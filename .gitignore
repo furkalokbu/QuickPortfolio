@@ -9,3 +9,4 @@ env
 *.pyc
 .vscode
 .vscode/settings.json
+log/error.log

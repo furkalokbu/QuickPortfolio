@@ -73,7 +73,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-SITE_ID = 1
 
 ROOT_URLCONF = "QuickPortfolio.urls"
 
@@ -122,6 +121,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+    "django.contrib.sitemaps",
     'django.contrib.postgres',
     "rest_framework",
     "rest_framework.authtoken",
