@@ -3345,3 +3345,134 @@ Traceback (most recent call last):
   File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/rest_framework/request.py", line 418, in __getattr__
     return self.__getattribute__(attr)
 AttributeError: 'Request' object has no attribute 'build_absolute_url'
+ERROR 2021-05-18 04:29:48,652 exception 15566 140193503901440 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 22, in Home
+    raise Exception("There was an error!")
+Exception: There was an error!
+ERROR 2021-05-18 04:30:44,594 exception 16352 140623117678336 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 24, in Home
+    raise Exception("There was an error!")
+Exception: There was an error!
+ERROR 2021-05-18 04:31:06,685 exception 16594 140593781266176 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 28, in Home
+    return render(request, template_name, context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/defaulttags.py", line 211, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['portfolio/(?P<pk>[^/]+)/$']
+ERROR 2021-05-18 04:31:24,427 exception 16712 140687377426176 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 28, in Home
+    return render(request, template_name, context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 155, in render
+    return compiled_parent._render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/loader_tags.py", line 67, in render
+    result = block.nodelist.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 943, in render
+    bit = node.render_annotated(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/defaulttags.py", line 211, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/base.py", line 910, in render_annotated
+    return self.render(context)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/template/defaulttags.py", line 447, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/urls/base.py", line 88, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/urls/resolvers.py", line 632, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'portfolio_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['portfolio/(?P<pk>[^/]+)/$']
+ERROR 2021-05-18 04:31:50,977 exception 16955 140632951760640 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/exception.py", line 35, in inner
+    response = get_response(request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 128, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mechanic/dev/QuickPortfolio/env/lib/python3.7/site-packages/django/core/handlers/base.py", line 126, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mechanic/dev/QuickPortfolio/projects/views.py", line 24, in Home
+    raise Exception("There was an error!")
+Exception: There was an error!
